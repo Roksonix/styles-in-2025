@@ -1,0 +1,49 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as FlexStories from './Flex.stories';
+
+<Meta of={FlexStories} />
+
+# Flex
+
+Flex is a more specific layout component that uses the flexbox layout model to align its children.
+
+You can still use the same props as the Box in addition to props which control the flexbox layout.
+
+## Usage
+
+```jsx
+import { Flex } from '@similarweb/ui-components/foundations';
+
+...
+
+<Flex>
+  {children}
+</Flex>
+```
+
+<Canvas of={FlexStories.FlexDefault} />
+
+```jsx
+import { Flex } from '@similarweb/ui-components/foundations';
+
+...
+
+<Flex flexDirection="column" gap="16px">
+  {children}
+</Flex>
+```
+
+<Canvas of={FlexStories.FlexColumn} />
+
+```jsx
+import { Flex } from '@similarweb/ui-components/foundations';
+
+...
+
+<Flex alignItems="center" justifyContent="space-between">
+  {children}
+</Flex>
+```
+
+<Canvas of={FlexStories.FlexAlignment} />
