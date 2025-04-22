@@ -1,8 +1,7 @@
 import { action } from "@storybook/addon-actions";
 import { boolean } from "@storybook/addon-knobs";
-import styled from "styled-components";
+import { css } from "@emotion/css";
 
-import { renderDefaultTextComponent } from "..";
 import { QueryBarAppItem } from "../src/QueryBarItems/QueryBarAppItem";
 import { QueryBarGroupItem } from "../src/QueryBarItems/QueryBarGroupItem";
 import { QueryBarWebsiteItem } from "../src/QueryBarItems/QueryBarWebsiteItem";
@@ -15,14 +14,17 @@ import {
   getWebsiteCompareItemsData,
   getWebsiteItemsData,
 } from "./QueryBarStoriesHelper";
-import { Flex } from "@/components/foundations";
+import { renderDefaultTextComponent } from "../src/Common/QueryBarItemHelper";
 
-const ItemWrapper = styled.div`
+const itemWrapperStyles = css`
   margin-right: 8px;
   display: flex;
   flex-shrink: 1;
   max-width: 320px;
   min-width: 128px;
+`;
+const flex = css`
+  display: flex;
 `;
 
 export default {
@@ -33,18 +35,18 @@ export default {
 export const WebsiteQueryBarItemSingle = () => {
   const queryBarItems = getWebsiteItemsData().map((item) => {
     return (
-      <ItemWrapper key={item.text}>
+      <div className={itemWrapperStyles} key={item.text}>
         <QueryBarWebsiteItem
           isCompare={false}
           text={item.text}
           image={item.image}
           onItemClick={() => action(`clicked item`)(item.text)}
         />
-      </ItemWrapper>
+      </div>
     );
   });
 
-  return <Flex>{queryBarItems}</Flex>;
+  return <div className={flex}>{queryBarItems}</div>;
 };
 
 WebsiteQueryBarItemSingle.story = {
@@ -54,7 +56,7 @@ WebsiteQueryBarItemSingle.story = {
 export const WebsiteQueryBarItemSingleReverseEllipsis = () => {
   const queryBarItems = getWebsiteItemsData().map((item) => {
     return (
-      <ItemWrapper key={item.text}>
+      <div className={itemWrapperStyles} key={item.text}>
         <QueryBarWebsiteItem
           isCompare={false}
           text={item.text}
@@ -62,11 +64,11 @@ export const WebsiteQueryBarItemSingleReverseEllipsis = () => {
           onItemClick={() => action(`clicked item`)(item.text)}
           textRenderFunction={(...args) => renderDefaultTextComponent(args[0], args[1], args[2], true)}
         />
-      </ItemWrapper>
+      </div>
     );
   });
 
-  return <Flex>{queryBarItems}</Flex>;
+  return <div className={flex}>{queryBarItems}</div>;
 };
 
 WebsiteQueryBarItemSingle.story = {
@@ -76,7 +78,7 @@ WebsiteQueryBarItemSingle.story = {
 export const WebsiteQueryBarItemCompare = () => {
   const queryBarItems = getWebsiteCompareItemsData().map((item) => {
     return (
-      <ItemWrapper key={item.text}>
+      <div className={itemWrapperStyles} key={item.text}>
         <QueryBarWebsiteItem
           isCompare={true}
           text={item.text}
@@ -86,11 +88,11 @@ export const WebsiteQueryBarItemCompare = () => {
           onButtonClick={() => action("clicked close button")(item.text)}
           isDisabled={boolean("Disable icon and text hover state", false)}
         />
-      </ItemWrapper>
+      </div>
     );
   });
 
-  return <Flex>{queryBarItems}</Flex>;
+  return <div className={flex}>{queryBarItems}</div>;
 };
 
 WebsiteQueryBarItemCompare.story = {
@@ -100,7 +102,7 @@ WebsiteQueryBarItemCompare.story = {
 export const WebsiteQueryBarItemSingleWithSecondaryText = () => {
   const queryBarItems = getWebsiteItemsData().map((item) => {
     return (
-      <ItemWrapper key={item.text}>
+      <div className={itemWrapperStyles} key={item.text}>
         <QueryBarWebsiteItem
           isCompare={false}
           text={item.text}
@@ -108,11 +110,11 @@ export const WebsiteQueryBarItemSingleWithSecondaryText = () => {
           image={item.image}
           onItemClick={() => action(`clicked item`)(item.text)}
         />
-      </ItemWrapper>
+      </div>
     );
   });
 
-  return <Flex>{queryBarItems}</Flex>;
+  return <div className={flex}>{queryBarItems}</div>;
 };
 
 WebsiteQueryBarItemSingleWithSecondaryText.story = {
@@ -122,7 +124,7 @@ WebsiteQueryBarItemSingleWithSecondaryText.story = {
 export const WebsiteQueryBarItemSingleWithRendererFunction = () => {
   const queryBarItems = getWebsiteItemsData().map((item) => {
     return (
-      <ItemWrapper key={item.text}>
+      <div className={itemWrapperStyles} key={item.text}>
         <QueryBarWebsiteItem
           isCompare={false}
           text={item.text}
@@ -136,11 +138,11 @@ export const WebsiteQueryBarItemSingleWithRendererFunction = () => {
           image={item.image}
           onItemClick={() => action(`clicked item`)(item.text)}
         />
-      </ItemWrapper>
+      </div>
     );
   });
 
-  return <Flex>{queryBarItems}</Flex>;
+  return <div className={flex}>{queryBarItems}</div>;
 };
 
 WebsiteQueryBarItemSingleWithRendererFunction.story = {
@@ -150,24 +152,24 @@ WebsiteQueryBarItemSingleWithRendererFunction.story = {
 export const KeywordQueryBarItem = () => {
   const queryBarItems = getKeywordItemsData().map((item) => {
     return (
-      <ItemWrapper key={item.text}>
+      <div className={itemWrapperStyles} key={item.text}>
         <QueryBarGroupItem
           text={item.text}
           secondaryText={item.secondaryText}
           icon={item.image}
           onItemClick={() => action("item click")(item.text)}
         />
-      </ItemWrapper>
+      </div>
     );
   });
 
-  return <Flex>{queryBarItems}</Flex>;
+  return <div className={flex}>{queryBarItems}</div>;
 };
 
 export const KeywordQueryBarItemWithBadge = () => {
   const queryBarItems = getKeywordItemsData().map((item) => {
     return (
-      <ItemWrapper key={item.text}>
+      <div className={itemWrapperStyles} key={item.text}>
         <QueryBarGroupItem
           isCompare={true}
           text={item.text}
@@ -176,34 +178,34 @@ export const KeywordQueryBarItemWithBadge = () => {
           onItemClick={() => action("item click")(item.text)}
           badgeColor={item.badgeColor}
         />
-      </ItemWrapper>
+      </div>
     );
   });
 
-  return <Flex>{queryBarItems}</Flex>;
+  return <div className={flex}>{queryBarItems}</div>;
 };
 
 export const CategoryQueryBarItem = () => {
   const queryBarItems = getCategoryItemsData().map((item) => {
     return (
-      <ItemWrapper key={item.text}>
+      <div className={itemWrapperStyles} key={item.text}>
         <QueryBarGroupItem
           text={item.text}
           secondaryText={item.secondaryText}
           icon={item.image}
           onItemClick={() => action("item click")(item.text)}
         />
-      </ItemWrapper>
+      </div>
     );
   });
 
-  return <Flex>{queryBarItems}</Flex>;
+  return <div className={flex}>{queryBarItems}</div>;
 };
 
 export const CategoryQueryBarItemWithCustomRightIcon = () => {
   const queryBarItems = getCategoryItemsData().map((item) => {
     return (
-      <ItemWrapper key={item.text}>
+      <div className={itemWrapperStyles} key={item.text}>
         <QueryBarGroupItem
           iconName="arrow"
           text={item.text}
@@ -211,11 +213,11 @@ export const CategoryQueryBarItemWithCustomRightIcon = () => {
           icon={item.image}
           onItemClick={() => action("item click")(item.text)}
         />
-      </ItemWrapper>
+      </div>
     );
   });
 
-  return <Flex>{queryBarItems}</Flex>;
+  return <div className={flex}>{queryBarItems}</div>;
 };
 
 CategoryQueryBarItemWithCustomRightIcon.story = {
@@ -225,7 +227,7 @@ CategoryQueryBarItemWithCustomRightIcon.story = {
 export const CategoryQueryBarItemCompare = () => {
   const queryBarItems = getCategoryItemsData().map((item) => {
     return (
-      <ItemWrapper key={item.text}>
+      <div className={itemWrapperStyles} key={item.text}>
         <QueryBarGroupItem
           text={item.text}
           secondaryText={item.secondaryText}
@@ -234,11 +236,11 @@ export const CategoryQueryBarItemCompare = () => {
           onButtonClick={() => action("clicked close button")(item.text)}
           isCompare={true}
         />
-      </ItemWrapper>
+      </div>
     );
   });
 
-  return <Flex>{queryBarItems}</Flex>;
+  return <div className={flex}>{queryBarItems}</div>;
 };
 
 CategoryQueryBarItemCompare.story = {
@@ -248,24 +250,24 @@ CategoryQueryBarItemCompare.story = {
 export const AppCategoryQueryBarItem = () => {
   const queryBarItems = getAppCategoryItemsData().map((item) => {
     return (
-      <ItemWrapper key={item.text}>
+      <div className={itemWrapperStyles} key={item.text}>
         <QueryBarGroupItem
           text={item.text}
           secondaryText={item.secondaryText}
           icon={item.image}
           onItemClick={() => action("item click")(item.text)}
         />
-      </ItemWrapper>
+      </div>
     );
   });
 
-  return <Flex>{queryBarItems}</Flex>;
+  return <div className={flex}>{queryBarItems}</div>;
 };
 
 export const AppQueryBarItemCompare = () => {
   const queryBarItems = getAppCompareItemsData().map((item) => {
     return (
-      <ItemWrapper key={item.text}>
+      <div className={itemWrapperStyles} key={item.text}>
         <QueryBarAppItem
           isCompare={true}
           text={item.text}
@@ -275,11 +277,11 @@ export const AppQueryBarItemCompare = () => {
           onItemClick={() => action(`clicked item`)(item.text)}
           onButtonClick={() => action("clicked close button")(item.text)}
         />
-      </ItemWrapper>
+      </div>
     );
   });
 
-  return <Flex>{queryBarItems}</Flex>;
+  return <div className={flex}>{queryBarItems}</div>;
 };
 
 AppQueryBarItemCompare.story = {

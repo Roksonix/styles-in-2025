@@ -1,6 +1,6 @@
 import type * as CSS from "csstype";
 
-import type { FontVariant } from "@similarweb/styles";
+import type { FontVariant } from "@/styles";
 
 interface TypesRegistry extends CSS.Properties {
   color: string;
