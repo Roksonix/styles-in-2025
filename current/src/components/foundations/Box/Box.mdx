@@ -1,0 +1,43 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as BoxStories from './Box.stories';
+
+<Meta of={BoxStories} />
+
+# Box
+
+Box is a layout component that can be used to create a container for other components.
+
+It's highly customizable and can be used to set padding, margin, background color, and more.
+
+In case you need to create a layout with a specific style, i.e. you have a margin-left different from margin-right, you can use the `style` prop to pass a custom style object.
+
+## Usage
+
+```jsx
+import { Box } from '@similarweb/ui-components/foundations';
+
+...
+
+<Box paddingX="24px" paddingY="32px" margin="8px" background="lightgray" data-automation="box-test-id">
+  <div>Children of Box Component</div>
+</Box>
+```
+
+<Canvas of={BoxStories.BoxComponent} />
+
+```jsx
+<Box as="section" paddingX="24px" paddingY="32px" margin="8px" background="lightgray">
+  <div>Children of Box Component</div>
+</Box>
+```
+
+<Canvas of={BoxStories.BoxAsSection} />
+
+### User action pseudo-classes
+
+Box component supports user action pseudo-classes, which can be used to apply styles when the user interacts with the element.
+
+For example, you can use the `whenHover` prop to change the background color when the user hovers over the element.
+
+<Canvas of={BoxStories.HoverableBox} />

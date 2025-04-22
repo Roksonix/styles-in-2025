@@ -1,0 +1,52 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as TextStories from './Text.stories';
+
+<Meta of={TextStories} />
+
+# Text
+
+Text is a typography component that can be used to render text with different styles.
+
+By passing fontVariant, you can change the font size and weight of the text.
+
+Replacement for direct usage of setFont/setFontVariant in CSS-in-JS code.
+
+## Usage
+
+```jsx
+import { Text } from '@similarweb/ui-components/foundations';
+
+...
+
+<Flex>
+  <Text fontVariant="input2">Input variant</Text>
+</Flex>
+```
+
+<Canvas of={TextStories.TextVariant} />
+
+```jsx
+import { Text } from '@similarweb/ui-components/foundations';
+
+...
+
+<Flex>
+  <Text fontVariant="h2">Heading variant</Text>
+</Flex>
+```
+
+<Canvas of={TextStories.TextHeading} />
+
+```jsx
+import { Text } from '@similarweb/ui-components/foundations';
+import { colorsPalettes } from "@similarweb/styles";
+
+...
+
+<Flex>
+  <Text fontVariant="caption2" color={colorsPalettes.red[500]}>My Eyes</Text>
+</Flex>
+```
+
+<Canvas of={TextStories.TextCaption} />

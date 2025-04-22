@@ -1,0 +1,27 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as StackStories from './Stack.stories';
+
+<Meta of={StackStories} />
+
+# Stack
+
+Stack is the most specific of the foundations layout components.
+
+It's a component which should be used as container for elements which are placed in a column with a gap between them.
+
+Shorthand for `Flex` component with `flexDirection="column"` and `gap` prop.
+
+## Usage
+
+```jsx
+import { Stack } from '@similarweb/ui-components/foundations';
+
+...
+
+<Stack gap="16px">
+  {children}
+</Stack>
+```
+
+<Canvas of={StackStories.StackComponent} />
