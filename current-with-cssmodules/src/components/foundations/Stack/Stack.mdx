@@ -1,0 +1,95 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as StackStories from './Stack.stories';
+
+<Meta of={StackStories} />
+
+# Stack
+
+The Stack component is a specialized layout component that arranges its children in a vertical column with consistent spacing. It's built using CSS modules and provides a streamlined API for vertical layouts.
+
+## Features
+
+- Automatic vertical layout with customizable spacing
+- Flexible alignment and justification controls
+- Built with CSS modules for optimal performance
+- Type-safe props with TypeScript
+
+## Props
+
+The Stack component accepts all standard HTML div props plus the following specific props:
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| gap | string \| number | 0 | Space between items |
+| width | string \| number | 'auto' | Container width |
+| height | string \| number | 'auto' | Container height |
+| minWidth | string \| number | 0 | Minimum container width |
+| minHeight | string \| number | 0 | Minimum container height |
+| maxWidth | string \| number | 'none' | Maximum container width |
+| maxHeight | string \| number | 'none' | Maximum container height |
+| padding | string \| number | 0 | Container padding |
+| margin | string \| number | 0 | Container margin |
+| alignItems | string | 'stretch' | Cross-axis alignment |
+| justifyContent | string | 'flex-start' | Main-axis alignment |
+
+## Examples
+
+### Basic Usage
+
+```tsx
+<Stack gap="16px">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</Stack>
+```
+
+### With Alignment
+
+```tsx
+<Stack gap="16px" alignItems="center" width="300px">
+  <div>Centered Item 1</div>
+  <div>Centered Item 2</div>
+  <div>Centered Item 3</div>
+</Stack>
+```
+
+### With Justification
+
+```tsx
+<Stack gap="16px" justifyContent="space-between" height="400px">
+  <div>Top</div>
+  <div>Middle</div>
+  <div>Bottom</div>
+</Stack>
+```
+
+### With Custom Sizes
+
+```tsx
+<Stack gap="16px" width="100%">
+  <div style={{ width: "100%" }}>Full Width</div>
+  <div style={{ width: "75%" }}>75% Width</div>
+  <div style={{ width: "50%" }}>50% Width</div>
+</Stack>
+```
+
+## Usage with Other Components
+
+The Stack component works well with other layout components and can be nested to create complex layouts:
+
+```tsx
+<Stack gap="24px">
+  <Stack gap="8px">
+    <h2>Section Title</h2>
+    <p>Section description</p>
+  </Stack>
+  <Stack gap="16px">
+    <div>Content Item 1</div>
+    <div>Content Item 2</div>
+  </Stack>
+</Stack>
+```
+
+<Canvas of={StackStories.StackComponent} />

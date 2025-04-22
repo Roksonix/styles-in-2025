@@ -1,0 +1,49 @@
+.imageItemContainer {
+  width: 32px;
+  height: 32px;
+  background-color: var(--carbon-0);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+  transition: border 0.2s ease-out;
+  position: relative;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.colorBadge {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  position: absolute;
+  bottom: -4px;
+  right: -3px;
+  border: 1px solid var(--carbon-50);
+}
+
+.imageContainer {
+  max-width: 16px;
+  max-height: 16px;
+}
+
+.largeImageContainer {
+  max-width: 26px;
+  max-height: 26px;
+  border-radius: 6px;
+}
+
+.iconContainer :global(.SWReactIcons) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconContainer :global(.SWReactIcons svg path),
+.iconContainer :global(.SWReactIcons svg defs path),
+.iconContainer :global(.SWReactIcons svg use),
+.iconContainer :global(.SWReactIcons svg g) {
+  fill-opacity: 1;
+  transition: fill 0.2s ease-out;
+} 

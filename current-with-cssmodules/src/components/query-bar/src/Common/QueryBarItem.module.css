@@ -1,0 +1,97 @@
+:root {
+  --single-line-item-height: 32px;
+  --multi-line-item-height: 40px;
+}
+
+.itemContainer {
+  background-color: var(--carbon-25);
+  border-radius: 8px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.2s ease-out;
+  font-family: Roboto;
+  max-width: 320px;
+  min-width: 128px;
+  flex: 1 1 auto;
+  padding-right: 8px;
+}
+
+.itemContainer:not(.disabled):hover {
+  background-color: var(--navigation-active-tile-background);
+  cursor: pointer;
+}
+
+.fixedWidth {
+  flex: 0 0 auto;
+}
+
+.itemClickContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 0;
+  flex: 1 1 auto;
+  line-height: initial;
+}
+
+.primaryText {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 500;
+  transition: color 0.2s ease-out;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.reverseEllipsis {
+  direction: rtl;
+}
+
+.reverseEllipsis span {
+  unicode-bidi: plaintext;
+}
+
+.secondaryText {
+  font-size: 10px;
+  transition: color 0.2s ease-out;
+  max-width: 100%;
+}
+
+.iconContainer {
+  display: flex;
+  flex: 0 0 auto;
+}
+
+.iconContainer:not(.hideRemoveButton) {
+  padding-left: 8px;
+}
+
+.iconContainer :global(.SWReactIcons) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.iconContainer :global(.SWReactIcons:hover) {
+  cursor: pointer;
+}
+
+.iconContainer :global(.SWReactIcons svg path) {
+  fill-opacity: 1;
+  transition: fill 0.2s ease-out;
+} 

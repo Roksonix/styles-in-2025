@@ -1,0 +1,26 @@
+:root {
+  /* Carbon colors */
+  --carbon-0: #FFFFFF;
+  --carbon-25: #F5F5F5;
+  --carbon-50: #E8E8E8;
+  --carbon-100: #D9D9D9;
+  --carbon-200: #BFBFBF;
+  --carbon-300: #A6A6A6;
+  --carbon-400: #8C8C8C;
+  --carbon-500: #737373;
+  --carbon-600: #595959;
+  --carbon-700: #404040;
+  --carbon-800: #262626;
+  --carbon-900: #0D0D0D;
+
+  /* Navigation colors */
+  --navigation-active-tile-background: #E8E8E8;
+  --navigation-hover-background: #F5F5F5;
+  --navigation-active-background: #D9D9D9;
+  --navigation-disabled-background: #F5F5F5;
+  --navigation-disabled-text: #A6A6A6;
+  --navigation-primary-text: #262626;
+  --navigation-secondary-text: #737373;
+  --navigation-icon: #8C8C8C;
+  --navigation-border: #D9D9D9;
+} 

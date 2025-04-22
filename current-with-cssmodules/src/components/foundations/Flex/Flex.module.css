@@ -1,0 +1,50 @@
+:root {
+    --single-line-item-height: 32px;
+    --multi-line-item-height: 40px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: var(--flex-direction, row);
+    flex-wrap: var(--flex-wrap, nowrap);
+    justify-content: var(--justify-content, flex-start);
+    align-items: var(--align-items, stretch);
+    align-content: var(--align-content, stretch);
+    gap: var(--gap, 0);
+    flex: var(--flex, none);
+    flex-grow: var(--flex-grow, 0);
+    flex-shrink: var(--flex-shrink, 1);
+    flex-basis: var(--flex-basis, auto);
+    width: var(--width, auto);
+    height: var(--height, auto);
+    min-width: var(--min-width, 0);
+    min-height: var(--min-height, 0);
+    max-width: var(--max-width, none);
+    max-height: var(--max-height, none);
+    padding: var(--padding, 0);
+    margin: var(--margin, 0);
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}

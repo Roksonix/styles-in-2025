@@ -1,0 +1,95 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as FlexStories from './Flex.stories';
+
+<Meta of={FlexStories} />
+
+# Flex
+
+The Flex component is a foundational layout component that provides a flexible container for arranging elements. It uses CSS modules for styling and provides a comprehensive API for controlling flex layout properties.
+
+## Features
+
+- Full support for all flex container properties
+- Type-safe props with TypeScript
+- CSS-in-JS via CSS Modules
+- Composable with other components
+
+## Props
+
+The Flex component accepts all standard HTML div props plus the following flex-specific props:
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| flexDirection | 'row' \| 'column' \| 'row-reverse' \| 'column-reverse' | 'row' | Direction of the flex container |
+| flexWrap | 'nowrap' \| 'wrap' \| 'wrap-reverse' | 'nowrap' | Whether items should wrap |
+| justifyContent | 'flex-start' \| 'flex-end' \| 'center' \| 'space-between' \| 'space-around' \| 'space-evenly' | 'flex-start' | Main axis alignment |
+| alignItems | 'flex-start' \| 'flex-end' \| 'center' \| 'baseline' \| 'stretch' | 'stretch' | Cross axis alignment |
+| alignContent | 'flex-start' \| 'flex-end' \| 'center' \| 'space-between' \| 'space-around' \| 'stretch' | 'stretch' | Alignment of wrapped lines |
+| gap | string \| number | 0 | Space between items |
+| flex | string \| number | 'none' | Shorthand for flex-grow, flex-shrink, and flex-basis |
+| flexGrow | number | 0 | Growth factor |
+| flexShrink | number | 1 | Shrink factor |
+| flexBasis | string \| number | 'auto' | Initial main size |
+| width | string \| number | 'auto' | Container width |
+| height | string \| number | 'auto' | Container height |
+
+## Examples
+
+### Basic Usage
+
+```tsx
+<Flex gap="16px">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</Flex>
+```
+
+### Column Layout
+
+```tsx
+<Flex flexDirection="column" gap="16px">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</Flex>
+```
+
+### Complex Layout
+
+```tsx
+<Flex flexDirection="column" gap="16px" width="100%">
+  <Flex flex="1" gap="16px">
+    <div style={{ flex: 2 }}>Main Content</div>
+    <div style={{ flex: 1 }}>Sidebar</div>
+  </Flex>
+  <div>Footer</div>
+</Flex>
+```
+
+<Canvas of={FlexStories.FlexDefault} />
+
+```jsx
+import { Flex } from '@similarweb/ui-components/foundations';
+
+...
+
+<Flex flexDirection="column" gap="16px">
+  {children}
+</Flex>
+```
+
+<Canvas of={FlexStories.FlexColumn} />
+
+```jsx
+import { Flex } from '@similarweb/ui-components/foundations';
+
+...
+
+<Flex alignItems="center" justifyContent="space-between">
+  {children}
+</Flex>
+```
+
+<Canvas of={FlexStories.FlexAlignment} />
