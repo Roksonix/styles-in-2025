@@ -1,0 +1,102 @@
+.searchAutoComplete {
+  width: 100%;
+}
+
+.searchAutoComplete :global(.ant-select-selector) {
+  padding: 0 15px !important;
+  height: 40px !important;
+  box-shadow: rgba(14, 30, 62, 0.08) 0px 3px 6px !important;
+  border: 1px solid rgb(230, 233, 236) !important;
+  border-radius: 3px !important;
+}
+
+.searchAutoComplete :global(.ant-select-selection-search) {
+  padding-left: 36px !important;
+}
+
+.searchAutoComplete :global(.ant-select-selection-placeholder) {
+  line-height: 40px !important;
+}
+
+/* Dropdown styles */
+.searchAutoCompleteDropdown {
+  padding: 0 !important;
+}
+
+.searchAutoCompleteDropdown :global(.ant-select-dropdown) {
+  margin-top: 0 !important;
+  padding: 0 !important;
+  box-shadow: rgba(14, 30, 62, 0.135) 0px 3px 6px !important;
+  border: 1px solid rgb(230, 233, 236) !important;
+  border-top: none !important;
+  border-radius: 0 0 3px 3px !important;
+}
+
+.searchAutoComplete :global(.ant-select-item) {
+  padding: 8px 16px !important;
+  width: 100% !important;
+  height: 48px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  cursor: pointer !important;
+}
+
+.searchIcon {
+  font-size: 24px;
+  margin-right: 12px;
+}
+
+.boldText {
+  font-weight: bold;
+}
+
+.faviconWrapper {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid #e6e9ec;
+  box-shadow: 0 2px 4px #cacaca33;
+  flex-shrink: 0;
+}
+
+.favicon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.domain {
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  color: rgb(9, 37, 64);
+  margin-left: 8px;
+  margin-right: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.secondaryText {
+  font-family: Roboto, sans-serif;
+  color: rgb(181, 190, 198);
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+.categoryTitle {
+  text-transform: uppercase;
+  padding: 5px 16px 15px;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  line-height: 16px;
+  font-size: 0.75rem;
+  color: rgb(9, 37, 64);
+} 
