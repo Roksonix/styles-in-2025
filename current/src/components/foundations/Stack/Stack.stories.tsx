@@ -59,3 +59,58 @@ export const StackComponent: Story = {
     gap: "16px",
   },
 };
+
+/*
+export const CompleteExample: Story = {
+  render: () => (
+    <Stack
+        height="100%"
+        justifyContent="center"
+        alignItems="center"
+        gap="40px"
+    >
+      <Stack
+          gap="16px"
+          maxWidth="444px"
+          alignItems="center"
+      >
+        <Text
+          fontVariant="h2"
+          style={{ textAlign: "center" }}
+          color="black"
+        >
+          Some header text
+        </Text>
+        <Text
+            fontVariant="body2"
+            style={{ textAlign: "center" }}
+            color={colorsPalettes.carbon[500]}
+        >
+          Some body text
+        </Text>
+      </Stack>
+      <Flex gap="32px">
+        <IconText
+          iconName="wand"
+          text={translate("tracker.empty.state.tracker.details.1")}
+        />
+        <IconText
+          iconName="bars"
+          text={translate("competitive-tracker-sunset.empty-tracker-page.details2")}
+        />
+        <IconText
+          iconName="arena"
+          text={translate("tracker.empty.state.tracker.details.2")}
+        />
+      </Flex>
+      <IconButton
+        iconName="arrow-right"
+        placement="right"
+        onClick={handleCreateProjectClick}
+      >
+        Button text
+      </IconButton>
+    </Stack>
+  ),
+};
+*/

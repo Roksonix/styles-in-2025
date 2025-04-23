@@ -1,11 +1,9 @@
 import React, { useMemo } from 'react';
-import { AutoComplete, Space, Typography } from 'antd';
+import { AutoComplete, Space } from 'antd';
 import type { AutoCompleteProps } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import { SearchItem, Category, WebsiteItem, ComparisonItem } from './types';
 import styles from './SearchAutoComplete.module.css';
-
-const { Text } = Typography;
 
 interface SearchAutoCompleteProps extends Omit<AutoCompleteProps, 'options'> {
   items: SearchItem[];

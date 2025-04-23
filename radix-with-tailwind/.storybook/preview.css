@@ -1,0 +1,10 @@
+.sb-show-main.sb-main-centered {
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 100px;
+}
+
+/* Hide storybook root in SearchAutoComplete story */
+#storybook-root {
+  display: none;
+} 
