@@ -136,12 +136,6 @@ export const renderIconComponent = (isActive: boolean, iconName: IconName, iconS
       "flex flex-none",
       "pl-2",
       iconColor,
-      "[&_.SWReactIcons]:flex [&_.SWReactIcons]:justify-center [&_.SWReactIcons]:items-center [&_.SWReactIcons]:flex-none",
-      "[&_.SWReactIcons:hover]:cursor-pointer",
-      "[&_.SWReactIcons_svg_path]:fill-current [&_.SWReactIcons_svg_path]:fill-opacity-100 [&_.SWReactIcons_svg_path]:transition-colors [&_.SWReactIcons_svg_path]:duration-200",
-      "[&_.SWReactIcons_svg_defs_path]:fill-current",
-      "[&_.SWReactIcons_svg_use]:fill-current",
-      "[&_.SWReactIcons_svg_g]:stroke-current [&_.SWReactIcons_svg_g_mask]:fill-current"
     )}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={iconSize || "16px"} height={iconSize || "16px"}>
         <path className="fill-current fill-opacity-40" d="m8.394 19.75-5.481 1.308 1.239-5.551L14.758 4.9l4.243 4.243L8.394 19.749zM6.98 15.506l1.414 1.414 7.779-7.778-1.415-1.415zM19.708 1.364l2.829 2.829a1 1 0 0 1 0 1.414l-2.122 2.121-4.242-4.242 2.12-2.122a1 1 0 0 1 1.415 0"></path>
